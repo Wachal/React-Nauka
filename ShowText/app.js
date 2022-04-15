@@ -1,27 +1,29 @@
 class App extends React.Component {
-  state = {
-    value: ""
+  
+  constructor(props){
+    super(props)
+    this.state = {
+      messageIsActive: false
+    }
   }
 
-  handleInputChange = (e) => {
-    console.log(e.target.value);
-    this.setState({
-      value: e.target.value
-    })
+  handleClick =()=>{
+    this.setState ({
+      messageIsActive: !this.state.messageIsActive
+    }) 
   }
 
-  handleResetClick = () => {
-    this.setState({
-      value: ""
-    })
-  }
 
+  
+  
+  
   render() {
+
+    const text = "Lorem sadasdasdas"
     return (
       <React.Fragment>
-        <input value={this.state.value} placeholder="wpisz..." onChange={this.handleInputChange} type="text" />
-        <button onClick={this.handleResetClick}>Reset</button>
-        <h1 className="title">{this.state.value.toUpperCase()}</h1>
+        <button onClick={this.handleClick}>{this.state.messageIsActive? "pokaz" : "ukryj"}</button>
+        <p>{text}</p>
       </React.Fragment>
     )
   }
