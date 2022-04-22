@@ -14,7 +14,7 @@ class Form extends React.Component {
         <input type="email" name="email"/>
       </label>
       <br/>
-      <button>zapiszz się</button>
+      <button>zapiszzz się</button>
       </form>
 
     )
