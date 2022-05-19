@@ -43,7 +43,7 @@ export default class App extends React.Component {
 
     const comments = this.state.comments.map(comment => (
       <div key={comment.id}>
-        <h4>{comment.title}</h4>
+        <h4>title{comment.title}</h4>
         <p>{comment.body}</p>
       </div>
     ))
