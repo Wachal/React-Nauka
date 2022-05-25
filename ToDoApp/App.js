@@ -17,7 +17,7 @@ class App extends Component {
         finishDate: null,
       },
       {id: 1, text: 'kupic jedzenie', date: '2022-04-11', important: false, active: true, finishDate: null},
-      {id: 2, text: 'sprzedac auto', date: '2022-03-18', important: false, active: true, finishDate: null},
+      {id: 2, text: 'sprzedac auto', date: '2022-03-18', important: false, active: false, finishDate: null},
       {id: 3, text: 'isc na silownie', date: '2022-02-21', important: false, active: true, finishDate: null},
       {id: 4, text: 'spotkac sie ze znajomymi', date: '2022-06-15', important: false, active: true, finishDate: null},
     ]
@@ -49,11 +49,11 @@ class App extends Component {
 
     return (
       <div>
+        <AddTask />
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus}/>
-        {/* <AddList /> */}
-        asd
       </div>
     )
   }
 }
+
 export default App
