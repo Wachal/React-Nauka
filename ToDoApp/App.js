@@ -22,6 +22,7 @@ class App extends Component {
       {id: 4, text: 'spotkac sie ze znajomymi', date: '2022-06-15', important: false, active: true, finishDate: null},
     ]
   }
+  counter = this.state.tasks.length
 
   deleteTask = (id) =>{
     const tasks = [...this.state.tasks]
@@ -45,11 +46,29 @@ class App extends Component {
     })
   }
 
+  addTask = (text, date, important) =>{
+    const task = {
+      id: this.counter,
+      text: text,
+      date: date,
+      important: important,
+      active: true,
+      finishDate: null,
+    }
+    this.counter++
+    this.setState(prevState => ({
+
+      //tworzenie nowej tablicy identycznej jak aktualna i dodanie obiektu na koniec i podmienienie tablicy starej na nową
+      tasks: [...prevState.tasks, task]
+    }))
+    return true
+  }
+
   render() {
 
     return (
       <div>
-        <AddTask />
+        <AddTask add={this.addTask}/>
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} change={this.changeTaskStatus}/>
       </div>
     )

@@ -8,6 +8,8 @@ const TaskList = (props) => {
   const activeTasks = active.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change}/>)
   const doneTasks = done.map(task => <Task key={task.id} task={task} delete={props.delete} change={props.change}/>)
 
+  done.sort((a,b) => a.finishDate - b.finishDate)
+
   return (
     <div>
       <div className="active">
